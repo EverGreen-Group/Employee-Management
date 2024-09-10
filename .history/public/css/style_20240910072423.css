@@ -50,8 +50,6 @@ body {
 
 
 
-
-
 /* SIDEBAR */
 #sidebar {
 	position: fixed;
@@ -529,7 +527,11 @@ body {
 /* CONTENT */
 
 /*Dashboard*/
-
+#dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
 
 
 

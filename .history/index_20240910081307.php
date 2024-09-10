@@ -33,10 +33,10 @@ switch ($page) {
     case 'evaluation':
         $controller = new EvaluationController();
         $controller->complete();
-    break;
+        break;
     case 'salary-slip':
         $controller = new SalaryController();
-        $controller->salary();
+        $controller->viewSlip();
         break;
     case 'view-attendance':
         $controller = new AttendanceController();

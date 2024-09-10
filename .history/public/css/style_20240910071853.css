@@ -50,8 +50,6 @@ body {
 
 
 
-
-
 /* SIDEBAR */
 #sidebar {
 	position: fixed;
@@ -529,8 +527,140 @@ body {
 /* CONTENT */
 
 /*Dashboard*/
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
 
+.box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
 
+.total-employees, .talent-request {
+    display: flex;
+    flex-direction: column;
+}
+
+.total-employees h2, .talent-request h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1e0e4b;
+    margin-bottom: 5px;
+}
+
+.total-employees p, .talent-request p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.employee-breakdown, .talent-breakdown {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.growth-rate {
+    color: #4caf50;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.graph-placeholder {
+    height: 60px;
+    background: linear-gradient(to right, #e0f2f1 0%, #80cbc4 100%);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.graph-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #26a69a;
+    transform: translateY(-50%);
+}
+
+.upcoming-tasks, .announcements {
+    grid-column: span 1;
+}
+
+.upcoming-tasks h3, .announcements h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e0e4b;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upcoming-tasks h3 small, .announcements h3 small {
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+}
+
+.task-list li, .announcement-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task-list li:last-child, .announcement-list li:last-child {
+    border-bottom: none;
+}
+
+.task-list li span, .announcement-list li span {
+    font-size: 14px;
+    color: #333;
+}
+
+.task-list li small, .announcement-list li small {
+    font-size: 12px;
+    color: #666;
+}
+
+.task-list li.priority span {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.view-more, .see-all {
+    display: block;
+    text-align: right;
+    color: #26a69a;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 @media screen and (max-width: 768px) {

@@ -50,8 +50,6 @@ body {
 
 
 
-
-
 /* SIDEBAR */
 #sidebar {
 	position: fixed;
@@ -528,7 +526,84 @@ body {
 /* MAIN */
 /* CONTENT */
 
-/*Dashboard*/
+/* Apply Leave Form Styles */
+.apply-leave-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.apply-leave-form .form-group {
+    margin-bottom: 20px;
+}
+
+.apply-leave-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--dark-grey);
+    font-size: 14px;
+}
+
+.apply-leave-form input[type="text"],
+.apply-leave-form input[type="date"],
+.apply-leave-form select,
+.apply-leave-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: var(--light);
+}
+
+.apply-leave-form select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+}
+
+.apply-leave-form .input-with-icon {
+    position: relative;
+}
+
+.apply-leave-form .input-with-icon i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--main);
+}
+
+.apply-leave-form .file-upload-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: var(--light);
+    color: var(--main);
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.apply-leave-form .file-upload-btn i {
+    margin-right: 5px;
+}
+
+.apply-leave-form .btn-submit {
+    background-color: var(--main);
+    color: var(--light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.apply-leave-form .btn-submit:hover {
+    background-color: var(--dark-main);
+}
 
 
 

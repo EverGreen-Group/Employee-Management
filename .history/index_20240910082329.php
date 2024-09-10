@@ -36,7 +36,7 @@ switch ($page) {
     break;
     case 'salary-slip':
         $controller = new SalaryController();
-        $controller->salary();
+        $controller->salary-slip();
         break;
     case 'view-attendance':
         $controller = new AttendanceController();

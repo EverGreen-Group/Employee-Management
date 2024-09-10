@@ -34,7 +34,7 @@ switch ($page) {
         $controller = new EvaluationController();
         $controller->complete();
     break;
-    case 'salary-slip':
+    case 'salary-summary':
         $controller = new SalaryController();
         $controller->salary();
         break;
