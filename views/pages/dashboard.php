@@ -1,4 +1,8 @@
-<h1>Welcome, Factory Worker</h1>
+<div class="head-title">
+    <div class="left">
+        <h1>Welcome, Factory Worker</h1>
+    </div>
+</div>
 
 <ul class="box-info">
     <li>

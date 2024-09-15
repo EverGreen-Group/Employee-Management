@@ -15,6 +15,6 @@
         <span class="num">8</span>
     </a>
     <a href="#" class="profile">
-        <img src="/public/img/people.png">
+        <img src="../project-root/public/img/people.png">
     </a>
 </nav>

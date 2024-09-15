@@ -1,32 +1,34 @@
 <?php
 // controllers/HomeController.php
 
+require_once BASE_PATH . 'models/User.php';
+
 class HomeController {
+    private $userModel;
+
+    public function __construct() {
+        $this->userModel = new User();
+    }
+
     public function index() {
-        // In a real application, you might fetch data from a model here
+        // Example: Fetch user data
+        $userId = 1; // This would typically come from a session
+        $user = $this->userModel->getUser($userId);
+
         $data = [
             'title' => 'Dashboard',
-            'page' => 'dashboard'
+            'page' => 'dashboard',
+            'user' => $user
         ];
 
-        // Load the view
         $this->loadView('dashboard', $data);
     }
 
     private function loadView($view, $data) {
-        // Extract the data array to individual variables
         extract($data);
-
-        // Start output buffering
         ob_start();
-
-        // Include the view file
         include BASE_PATH . "views/pages/{$view}.php";
-
-        // Get the contents of the output buffer
         $content = ob_get_clean();
-
-        // Include the layout file
         include BASE_PATH . 'views/layouts/main.php';
     }
 }

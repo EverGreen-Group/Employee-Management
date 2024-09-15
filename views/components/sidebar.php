@@ -1,6 +1,6 @@
 <section id="sidebar">
     <a href="index.php" class="brand">
-        <img src="/public/img/logo.svg" alt="Logo">
+        <img src="../project-root/public/img/logo.svg" alt="Logo">
         <span class="text">EVERGREEN</span>
     </a>
     <ul class="side-menu top">

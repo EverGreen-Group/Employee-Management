@@ -2,7 +2,7 @@
 // controllers/complete-evaluation.php
 
 class EvaluationController {
-    public function apply() {
+    public function complete() {
         // In a real application, you might process form data here
         $data = [
             'title' => 'Complete-Evaluation',

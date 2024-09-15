@@ -1,38 +1,47 @@
 <?php
 // controllers/LeaveController.php
 
+require_once BASE_PATH . 'models/Leave.php';
+
 class LeaveController {
+    private $leaveModel;
+
+    public function __construct() {
+        $this->leaveModel = new Leave();
+    }
+
     public function apply() {
-        // In a real application, you might process form data here
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Process form submission
+            $leaveData = [
+                'user_id' => 1, // This would typically come from a session
+                'leave_type' => $_POST['leave_type'],
+                'start_date' => $_POST['start_date'],
+                'end_date' => $_POST['end_date'],
+                'reason' => $_POST['reason']
+            ];
+
+            if ($this->leaveModel->applyLeave($leaveData)) {
+                $message = "Leave application submitted successfully.";
+            } else {
+                $message = "Error submitting leave application.";
+            }
+        }
+
         $data = [
             'title' => 'Apply Leave',
-            'page' => 'apply-leave'
+            'page' => 'apply-leave',
+            'message' => $message ?? null
         ];
 
-        // Load the view
         $this->loadView('apply-leave', $data);
     }
 
     private function loadView($view, $data) {
-        // Extract the data array to individual variables
         extract($data);
-
-        // Start output buffering
         ob_start();
-
-        // Include the view file
-        $viewPath = BASE_PATH . "views" . DIRECTORY_SEPARATOR . "pages" . DIRECTORY_SEPARATOR . "{$view}.php";
-        if (file_exists($viewPath)) {
-            include $viewPath;
-        } else {
-            // Handle the case where the view file doesn't exist
-            echo "Error: View file not found.";
-        }
-
-        // Get the contents of the output buffer
+        include BASE_PATH . "views/pages/{$view}.php";
         $content = ob_get_clean();
-
-        // Include the layout file
-        include BASE_PATH . 'views' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'main.php';
+        include BASE_PATH . 'views/layouts/main.php';
     }
 }
